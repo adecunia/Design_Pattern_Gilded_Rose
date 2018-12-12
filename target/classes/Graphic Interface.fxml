@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.insightr.gildedrose.Controller">
+        <children>
+            <Pane layoutX="53.0" layoutY="27.0" prefHeight="44.0" prefWidth="242.0">
+         <children>
+            <Button layoutX="14.0" layoutY="29.0" mnemonicParsing="false" onAction="#loadItems" prefHeight="31.0" prefWidth="57.0" text="Load" />
+         </children></Pane>
+      <Button layoutX="641.0" layoutY="369.0" mnemonicParsing="false" onAction="#addItem" text="Add" />
+      <Button layoutX="243.0" layoutY="56.0" mnemonicParsing="false" onAction="#updateItems" text="Update" />
+      <TableView fx:id="table_items" layoutX="60.0" layoutY="106.0" prefHeight="410.0" prefWidth="458.0">
+        <columns>
+
+                <TableColumn fx:id="nameColumn" prefWidth="224.00001525878906" text="Name">
+                    <cellValueFactory><PropertyValueFactory property="name" /> </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="sellInColumn" minWidth="4.0" prefWidth="108.0" text="SellIn">
+                    <cellValueFactory><PropertyValueFactory property="sellIn" /> </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="qualityColumn" minWidth="4.0" prefWidth="125.0" text="Quality">
+                    <cellValueFactory><PropertyValueFactory property="quality" /> </cellValueFactory>
+                </TableColumn>
+            </columns>
+
+      </TableView>
+      <TextField fx:id="Name" layoutX="572.0" layoutY="180.0" promptText="Name" />
+      <TextField fx:id="Quality" layoutX="572.0" layoutY="252.0" promptText="Quality" />
+      <TextField fx:id="SellIn" layoutX="572.0" layoutY="317.0" promptText="SellIn" />
+        </children>
+</AnchorPane>
