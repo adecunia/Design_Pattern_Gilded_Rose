@@ -32,13 +32,14 @@ public class Inventory {
     public Inventory() {
         super();
         InventorySetItems(new Item[]{
-                new Item("+5 Dexterity Vest", 10, 20),
-                new Item("Aged Brie", 2, 0),
-                new Item("Elixir of the Mongoose", 5, 7),
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Conjured Mana Cake", 3, 6)
+                new Item(0,"+5 Dexterity Vest", 10, 20),
+                new Item(1,"Aged Brie", 2, 0),
+                new Item(2,"Elixir of the Mongoose", 5, 7),
+                new Item(3,"Sulfuras, Hand of Ragnaros", 0, 80),
+                new Item(4,"Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                new Item(5,"Conjured Mana Cake", 3, 6)
         });
+        setID(5);
     }
 
     public void printInventory() {
