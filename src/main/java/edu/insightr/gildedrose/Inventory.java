@@ -159,8 +159,8 @@ public class Inventory {
 
         for (int i = items.length; i < items.length + iList.size(); i++) {
             returnTab[i] = iList.get(i - items.length);
+            returnTab[i].setId(getID()+1);
             setID(getID()+1);
-            returnTab[i].setId(getID());
 
         }
 
@@ -178,7 +178,7 @@ public class Inventory {
         }
 
         returnTab[items.length] = i;
-        returnTab[items.length].setId(getID());
+        returnTab[items.length].setId(getID()+1);
         setID(getID()+1);
 
         items = returnTab;
