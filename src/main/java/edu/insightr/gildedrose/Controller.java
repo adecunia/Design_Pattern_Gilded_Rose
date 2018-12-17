@@ -62,7 +62,7 @@ public class Controller implements Initializable {
         xAxis.setLabel("Sellin");
         yAxis.setLabel("Number of items");
 
-        //inventory.DeclareSerieBarChart(barChart);
+        inventory.DeclareSerieBarChart(barChart);
 
 
     }
@@ -84,7 +84,7 @@ public class Controller implements Initializable {
         int quality =Integer.parseInt(Quality.getText());
 
 
-        Item new_items = new Item(inventory.getID(),name,sellIn,quality);
+        Item new_items = new Item(inventory.getID()+1,name,sellIn,quality);
         inventory.setID(inventory.getID()+1);
 
 
@@ -116,6 +116,8 @@ public class Controller implements Initializable {
         Item[] newInventory = inventory.add(Load_items);
 
         table_items.getItems().setAll(newInventory);
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(inventory.GetItemsName());
+        pieChart.setData(pieChartData);
 
     }
 }
