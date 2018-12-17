@@ -1,6 +1,6 @@
 ### Java ###
 # Compiled class file
-*.class
+*/target/classes/edu/insightr/gildedrose/.class
 
 # Log file
 *.log
