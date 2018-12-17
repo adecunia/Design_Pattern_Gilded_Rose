@@ -27,6 +27,7 @@ public class Controller implements Initializable {
     @FXML
     private TableView<Item> table_items;
 
+
     @FXML
     private TextField Name;
 
