@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Item {
 
-    private static int count = 0;
+
     private String name;
     private int sellIn;
     private int id;
@@ -19,15 +19,15 @@ public class Item {
 
     private int quality;
 
-    public Item(String name, int sellIn, int quality) {
+    public Item(int id,String name, int sellIn, int quality) {
         super();
+        this.id = id;
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
         SimpleDateFormat formatDate = new SimpleDateFormat("dd-MM-yyyy");
         creation_date = new Date("12/12/2012");
         sell_date = new Date("24/12/2012");
-        id = ++count;
     }
 
     public Item() {
@@ -36,6 +36,14 @@ public class Item {
         this.sellIn = 0;
         this.quality = 0;
         SimpleDateFormat formatDate = new SimpleDateFormat("dd-MM-yyyy");
+    }
+
+    public int getid() {
+        return id;
+    }
+
+    public void setid(int ID) {
+        this.id = ID;
     }
 
     public String getName() {

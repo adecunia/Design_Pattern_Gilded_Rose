@@ -11,10 +11,23 @@ public class Inventory {
 
     private Item[] items;
 
+    private int ID = 0;
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+
     public Inventory(Item[] items) {
         super();
         this.InventorySetItems(items);
     }
+
+
 
     public Inventory() {
         super();
@@ -161,6 +174,8 @@ public class Inventory {
 
         for (int j = 0; j < items.length; j++) {
             returnTab[j] = items[j];
+            items[j].setid(getID());
+            setID(getID()+1);
         }
 
         returnTab[items.length] = i;

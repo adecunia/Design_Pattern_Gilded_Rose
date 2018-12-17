@@ -85,7 +85,9 @@ public class Controller implements Initializable {
         int quality =Integer.parseInt(Quality.getText());
 
 
-        Item new_items = new Item(name,sellIn,quality);
+        Item new_items = new Item(inventory.getID(),name,sellIn,quality);
+        inventory.setID(inventory.getID()+1);
+
 
         Item[] newInventory = inventory.add_item(new_items);
 
