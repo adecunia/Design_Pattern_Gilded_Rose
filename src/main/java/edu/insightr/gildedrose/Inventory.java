@@ -1,8 +1,7 @@
 package edu.insightr.gildedrose;
 
-import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
-import javafx.scene.chart.XYChart;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -186,13 +185,13 @@ public class Inventory {
         return returnTab;
     }
 
-    public void DeclareSerieBarChart(BarChart barchart)
+    /*public void DeclareSerieBarChart(BarChart barchart)
     {
         for(int i=0;i<items.length;i++)
         {
             XYChart.Series series1 = new XYChart.Series();
-            series1.getData().add(new XYChart.Data(items[i].getSellIn(), items[i].getQuality()));
+            series1.getData().add(new XYChart.Data( String.valueOf( items[i].getSellIn()), String.valueOf( items[i].getQuality())));
             barchart.getData().addAll(series1);
         }
-    }
+    }*/
 }

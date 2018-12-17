@@ -13,20 +13,20 @@
 <?import javafx.scene.layout.Pane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1248.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.insightr.gildedrose.Controller">
-    <children>
-        <Pane layoutX="53.0" layoutY="27.0" prefHeight="44.0" prefWidth="242.0">
-            <children>
-                <Button layoutX="14.0" layoutY="29.0" mnemonicParsing="false" onAction="#loadItems" prefHeight="31.0" prefWidth="57.0" text="Load" />
-            </children></Pane>
-        <Button layoutX="343.0" layoutY="603.0" mnemonicParsing="false" onAction="#addItem" text="Add" />
-        <Button layoutX="243.0" layoutY="56.0" mnemonicParsing="false" onAction="#updateItems" text="Update" />
-        <TableView fx:id="table_items" layoutX="48.0" layoutY="106.0" prefHeight="400.0" prefWidth="1181.0">
-            <columns>
-                <TableColumn fx:id="idcolumn" minWidth="4.0" prefWidth="205.0" text="id">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="id" />
-                    </cellValueFactory>
-                </TableColumn>
+        <children>
+            <Pane layoutX="53.0" layoutY="27.0" prefHeight="44.0" prefWidth="242.0">
+         <children>
+            <Button layoutX="14.0" layoutY="29.0" mnemonicParsing="false" onAction="#loadItems" prefHeight="31.0" prefWidth="57.0" text="Load" />
+         </children></Pane>
+      <Button layoutX="343.0" layoutY="603.0" mnemonicParsing="false" onAction="#addItem" text="Add" />
+      <Button layoutX="243.0" layoutY="56.0" mnemonicParsing="false" onAction="#updateItems" text="Update" />
+      <TableView fx:id="table_items" layoutX="48.0" layoutY="106.0" prefHeight="400.0" prefWidth="1181.0">
+        <columns>
+            <TableColumn fx:id="idcolumn" minWidth="4.0" prefWidth="205.0" text="Id">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
                 <TableColumn fx:id="nameColumn" prefWidth="193.99998474121094" text="Name">
                     <cellValueFactory><PropertyValueFactory property="name" /> </cellValueFactory>
                 </TableColumn>
@@ -36,35 +36,35 @@
                 <TableColumn fx:id="qualityColumn" minWidth="4.0" prefWidth="168.0" text="Quality">
                     <cellValueFactory><PropertyValueFactory property="quality" /> </cellValueFactory>
                 </TableColumn>
-                <TableColumn fx:id="creationcolumn" minWidth="4.0" prefWidth="142.0" text="Creation Date">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="creation_date" />
-                    </cellValueFactory>
-                </TableColumn>
-                <TableColumn fx:id="sellcolumn" minWidth="4.0" prefWidth="143.0" text="Selling Date">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="sell_date" />
-                    </cellValueFactory>
-                </TableColumn>
-                <TableColumn fx:id="buycolumn" minWidth="4.0" prefWidth="205.0" text="Bying Date">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="buy_date" />
-                    </cellValueFactory>
-                </TableColumn>
+            <TableColumn fx:id="creationcolumn" minWidth="4.0" prefWidth="142.0" text="Creation Date">
+               <cellValueFactory>
+                  <PropertyValueFactory property="creation_date" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="sellcolumn" minWidth="4.0" prefWidth="143.0" text="Selling Date">
+               <cellValueFactory>
+                  <PropertyValueFactory property="sell_date" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="buycolumn" minWidth="4.0" prefWidth="205.0" text="Bying Date">
+               <cellValueFactory>
+                  <PropertyValueFactory property="buy_date" />
+               </cellValueFactory>
+            </TableColumn>
             </columns>
 
-        </TableView>
-        <TextField fx:id="Name" layoutX="81.0" layoutY="546.0" promptText="Name" />
-        <TextField fx:id="Quality" layoutX="81.0" layoutY="618.0" promptText="Quality" />
-        <TextField fx:id="SellIn" layoutX="81.0" layoutY="683.0" promptText="SellIn" />
-        <PieChart fx:id="pieChart" layoutX="433.0" layoutY="539.0" prefHeight="203.0" prefWidth="242.0" />
-        <BarChart fx:id="barChart" layoutX="767.0" layoutY="546.0" prefHeight="239.0" prefWidth="267.0">
-            <xAxis>
-                <CategoryAxis side="BOTTOM" />
-            </xAxis>
-            <yAxis>
-                <NumberAxis side="LEFT" />
-            </yAxis>
-        </BarChart>
-    </children>
+      </TableView>
+      <TextField fx:id="Name" layoutX="81.0" layoutY="546.0" promptText="Name" />
+      <TextField fx:id="Quality" layoutX="81.0" layoutY="618.0" promptText="Quality" />
+      <TextField fx:id="SellIn" layoutX="81.0" layoutY="683.0" promptText="SellIn" />
+      <PieChart fx:id="pieChart" layoutX="433.0" layoutY="539.0" prefHeight="203.0" prefWidth="242.0" />
+      <BarChart fx:id="barChart" layoutX="767.0" layoutY="546.0" prefHeight="239.0" prefWidth="267.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+        </children>
 </AnchorPane>
