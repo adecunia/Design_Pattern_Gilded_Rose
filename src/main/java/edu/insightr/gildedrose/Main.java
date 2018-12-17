@@ -11,8 +11,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             AnchorPane root = FXMLLoader.load(getClass().getResource("/Graphic Interface.fxml"));
-            Scene scene = new Scene(root, 800, 400);
+            Scene scene = new Scene(root, 1200, 800);
             primaryStage.setScene(scene);
+
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();

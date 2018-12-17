@@ -1,5 +1,10 @@
 package edu.insightr.gildedrose;
 
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Inventory {
@@ -21,7 +26,6 @@ public class Inventory {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
                 new Item("Conjured Mana Cake", 3, 6)
         });
-
     }
 
     public void printInventory() {
@@ -98,6 +102,40 @@ public class Inventory {
         return items;
     }
 
+    public List<PieChart.Data> GetItemsName()
+    {
+        List<PieChart.Data> PieChartData = new ArrayList<>();
+
+        for(int i =0; i<items.length;i++)
+        {
+            if(IndexType(items[i].getName(),i)==-1)
+            {
+                PieChartData.add(new PieChart.Data(items[0].getName(),items[0].getQuality()));
+            }
+            else
+            {
+
+            }
+        }
+        return PieChartData;
+    }
+
+    public int IndexType(String name,int p)
+    {
+        for (int i=p;i<items.length;i++)
+        {
+            if(name == items[i].getName())
+            {
+                return i;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        return -1;
+    }
+
     public void InventorySetItems(Item[] items) {
         this.items = items;
     }
@@ -131,5 +169,14 @@ public class Inventory {
 
         return returnTab;
     }
-}
 
+    public void DeclareSerieBarChart(BarChart barchart)
+    {
+        for(int i=0;i<items.length;i++)
+        {
+            XYChart.Series series1 = new XYChart.Series();
+            series1.getData().add(new XYChart.Data(items[i].getSellIn(), items[i].getQuality()));
+            barchart.getData().addAll(series1);
+        }
+    }
+}

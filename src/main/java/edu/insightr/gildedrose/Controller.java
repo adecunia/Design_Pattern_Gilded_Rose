@@ -6,6 +6,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
+import javafx.scene.chart.*;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
@@ -34,19 +36,45 @@ public class Controller implements Initializable {
     @FXML
     private TextField Quality;
 
+    @FXML
+    private PieChart pieChart;
+
+    @FXML
+    private BarChart barChart;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         inventory = new Inventory();
         ObservableList<Item> Items = FXCollections.observableArrayList(inventory.getItems());
         table_items.setItems(Items);
+
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(inventory.GetItemsName());
+        pieChart.setData(pieChartData);
+        pieChart.setTitle("Product by type");
+
+
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        barChart =     new BarChart<String,Number>(xAxis,yAxis);
+        barChart.setTitle("Sellin vs number of items");
+        xAxis.setLabel("Sellin");
+        yAxis.setLabel("Number of items");
+
+        inventory.DeclareSerieBarChart(barChart);
+
+
     }
+
+
 
 
     public void updateItems()
     {
         inventory.updateQuality();
         table_items.refresh();
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(inventory.GetItemsName());
+        pieChart.setData(pieChartData);
 
     }
 
@@ -81,7 +109,6 @@ public class Controller implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         Item[] newInventory = inventory.add(Load_items);
 
