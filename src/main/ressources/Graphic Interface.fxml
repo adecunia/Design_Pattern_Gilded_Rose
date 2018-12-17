@@ -24,7 +24,7 @@
         <columns>
             <TableColumn fx:id="idcolumn" minWidth="4.0" prefWidth="205.0" text="Id">
                 <cellValueFactory>
-                    <PropertyValueFactory property="Id" />
+                    <PropertyValueFactory property="id" />
                 </cellValueFactory>
             </TableColumn>
                 <TableColumn fx:id="nameColumn" prefWidth="193.99998474121094" text="Name">

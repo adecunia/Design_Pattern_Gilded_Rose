@@ -122,14 +122,10 @@ public class Inventory {
 
         for(int i =0; i<items.length;i++)
         {
-            if(IndexType(items[i].getName(),i)==-1)
-            {
-                PieChartData.add(new PieChart.Data(items[0].getName(),items[0].getQuality()));
-            }
-            else
-            {
 
-            }
+                PieChartData.add(new PieChart.Data(items[0].getName(),items[0].getQuality()));
+
+
         }
         return PieChartData;
     }
@@ -163,6 +159,9 @@ public class Inventory {
 
         for (int i = items.length; i < items.length + iList.size(); i++) {
             returnTab[i] = iList.get(i - items.length);
+            setID(getID()+1);
+            returnTab[i].setId(getID());
+
         }
 
         items=returnTab;
@@ -175,7 +174,7 @@ public class Inventory {
 
         for (int j = 0; j < items.length; j++) {
             returnTab[j] = items[j];
-            items[j].setid(getID());
+            items[j].setId(getID());
             setID(getID()+1);
         }
 

@@ -21,13 +21,13 @@ public class Item {
 
     public Item(int id,String name, int sellIn, int quality) {
         super();
-        this.id = id;
+        this.setId(id);
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
         SimpleDateFormat formatDate = new SimpleDateFormat("dd-MM-yyyy");
-        creation_date = new Date("12/12/2012");
-        sell_date = new Date("24/12/2012");
+        setCreation_date(new Date("12/12/2012"));
+        setSell_date(new Date("24/12/2012"));
     }
 
     public Item() {
@@ -36,15 +36,11 @@ public class Item {
         this.sellIn = 0;
         this.quality = 0;
         SimpleDateFormat formatDate = new SimpleDateFormat("dd-MM-yyyy");
+        setCreation_date(new Date("12/12/2012"));
+        setSell_date(new Date("24/12/2012"));
     }
 
-    public int getid() {
-        return id;
-    }
 
-    public void setid(int ID) {
-        this.id = ID;
-    }
 
     public String getName() {
         return name;
@@ -77,5 +73,61 @@ public class Item {
                 ", sellIn=" + sellIn +
                 ", quality=" + quality +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getCreation_date() {
+        return creation_date;
+    }
+
+    public void setCreation_date(Date creation_date) {
+        this.creation_date = creation_date;
+    }
+
+    public Date getSell_date() {
+        return sell_date;
+    }
+
+    public void setSell_date(Date sell_date) {
+        this.sell_date = sell_date;
+    }
+
+    public Date getBuy_date() {
+        return buy_date;
+    }
+
+    public void setBuy_date(Date buy_date) {
+        this.buy_date = buy_date;
+    }
+
+    public String getBuyProduct() {
+        return buyProduct;
+    }
+
+    public void setBuyProduct(String buyProduct) {
+        this.buyProduct = buyProduct;
+    }
+
+    public String getSellProduct() {
+        return sellProduct;
+    }
+
+    public void setSellProduct(String sellProduct) {
+        this.sellProduct = sellProduct;
+    }
+
+    public String getCreationProduct() {
+        return creationProduct;
+    }
+
+    public void setCreationProduct(String creationProduct) {
+        this.creationProduct = creationProduct;
     }
 }
